@@ -1,0 +1,71 @@
+:root {
+  --black: #0b111f;
+  --dark-gold: #e48100;
+}
+
+.cta-text{
+  color: var(--black);
+}
+.text-black{
+  color: var(--black); 
+}
+.top-contact-bar{
+  background-color: var(--dark-gold); 
+  color: var(--black);
+}
+
+.bg-black {
+  background-color: var(--black) !important;
+  color: #000000;
+}
+
+a.bg-black:hover, a.bg-black:focus,
+button.bg-black:hover,
+button.bg-black:focus {
+  background-color: #000000 !important;
+}
+
+.portfolio-overlay .portfolio-info h2{
+  padding: 0;
+}
+
+button.callComment{
+  color: #ffffff;
+  font-size: 16px;
+  margin: 0;
+  text-transform: capitalize;
+  font-weight: 700;
+  background: #00000085;
+  /* padding: 25px; */
+  background: linear-gradient(45deg, #fbb31957 0%, #405ece91 100%);
+  border: none;
+  outline: none;
+}
+
+/*---------- media queries -------- */
+@media (max-width: 767px) {
+  .top-contact-bar{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    font-size: 0.8em;
+    padding: 0 2em;
+    
+  }
+
+  #contact .contact-info address, #contact .contact-info p {
+    text-align: left;
+  }
+
+  #footer{
+    font-size: 0.7rem;
+  }
+
+  #footer .credits {
+    font-size: 0.6rem;
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
