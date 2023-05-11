@@ -4,7 +4,7 @@
 <div class="card mb-10 col-xl-10 col-md-10">
 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
   <h6 class="m-0 font-weight-bold text-primary">Добавить пользователя</h6>
-  <a href="/listUsers" class="btn btn-primary btn-icon-split">
+  <a href="/listUsers" class="btn btn-outline-primary btn-icon-split">
     <span class="icon text-white-50"><i class="fas fa-arrow-alt-circle-left"></i></span>
     <span class="text">Все пользователи</span>
   </a>
@@ -70,7 +70,7 @@
       </div>
     </div>
     
-    <button class="btn btn-success btn-icon-split" type="submit">
+    <button class="btn btn-outline-success btn-icon-split" type="submit">
       <span class="icon text-white-50"><i class="fas fa-check"></i></span>
       <span class="text">Добавить</span>
     </button>

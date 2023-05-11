@@ -10,20 +10,20 @@
         <div class="member">
           <div class="pic"><img src="{{asset('publicsite/img/team3.jpg')}}" alt=""></div>
           <div class="details">
-            <h4>Ксения К</h4>
+            <h4>Меня зовут Ксения</h4>
             <span>Что-то можно добавить</span>
             <div class="social">
-              <a href="https://twitter.com/?lang=ru"><i class="fa fa-twitter"></i></a>
-              <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
-              <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
-              <a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+              <a target="blank" href="https://twitter.com/?lang=ru"><i class="fa fa-twitter"></i></a>
+              <a target="blank" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+              <a target="blank" href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+              <a target="blank" href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
             </div>
           </div>
         </div>
       </div>
 
       <div class="col-lg-9 col-md-6 content">
-        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing</h2>
+        <h2>Немного о себе</h2>
         <h3>Dolores quae porro consequatur aliquam, incidunt eius magni provident, doloribus omnis minus ovident</h3>
         <p>Consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. malis nulla duis fugiat</p>
         <ul>
@@ -45,7 +45,7 @@
   <div class="container">
     <div class="section-header">
       <h2>Контакт</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+      <p>Приходите, звоните, пишите. Всегда Вам рада.</p>
     </div>
     <div class="row contact-info">
       <div class="col-lg-5"> 

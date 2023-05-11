@@ -4,9 +4,8 @@
 <section id="intro">
 
   <div class="intro-content">
-    <h2><span>Тут твой текст</span><br>Лучшее мест или что-то</h2>
+    <h2><span>Прически и макияж,</span><br>которые впечатляют</h2>
     <div>
-      {{-- <a href="#about" class="btn-get-started scrollto">Подробнее</a>  --}}
     </div>
   </div>
   <div class="item" style="background-image: url('img/intro-carousel/1.jpg');"></div>  
@@ -20,7 +19,7 @@
   <div class="container">
     <div class="section-header">
       <h2>Отзывы</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+      <p>Здесь вы можете оставить отзыв, пожелание или поделиться своими мыслями</p>
     </div>
     <div class="owl-carousel testimonials-carousel">
       @foreach ($testimonials as $testimonial)
@@ -33,8 +32,6 @@
       @endforeach
 
     </div>
-    {{-- @canany(['isAdmin', 'isManager', 'isUser']) --}}
-
     <nav id="">
       <ul class="nav-menu">
         <li><a 
@@ -47,16 +44,6 @@
           >Оставить отзыв</a></li>
       </ul>
     </nav>
-
-      {{-- <div class="section-footer">
-        <a 
-        @auth
-          data-toggle="modal" data-target="#testimonialsModal" 
-        @else
-          href="login"
-        @endauth>Оставить отзыв</a>
-      </div> --}}
-    {{-- @endcanany --}}
 
     <!-- Modal  -->
 <div class="modal fade" id="testimonialsModal" tabindex="-1" role="dialog" aria-labelledby="testimonialsModalTitle" aria-hidden="true">

@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>The Brand</title>
+  <title>Kseniya Studio</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
   <meta content="Author" name="WebThemez">
   <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
+  {{-- <link href="img/favicon.png" rel="icon"> --}}
+  <link href="{{asset('images/avatars/mylogo.png')}}" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -68,16 +69,16 @@
       </div>
       <div class="text-right text-black">
         <div class="d-inline-flex align-items-center">
-          <a class="text-dark px-2" href="https://twitter.com/?lang=ru">
+          <a class="text-dark px-2" target="blank" href="https://twitter.com/?lang=ru">
               <i class="fab fa-twitter"></i>
           </a>
-          <a class="text-dark px-2" href="https://www.linkedin.com/">
+          <a class="text-dark px-2" target="blank" href="https://www.linkedin.com/">
               <i class="fab fa-linkedin-in"></i>
           </a>
-          <a class="text-dark px-2" href="https://www.instagram.com/">
+          <a class="text-dark px-2" target="blank" href="https://www.instagram.com/">
               <i class="fab fa-instagram"></i>
           </a>
-          <a class="text-dark px-2" href="https://www.youtube.com/">
+          <a class="text-dark px-2" target="blank" href="https://www.youtube.com/">
               <i class="fab fa-youtube"></i>
           </a>
           <small class="px-2">|</small>
@@ -119,15 +120,18 @@
     <div class="container">
 
       <div id="logo" class="pull-left">
-        <h1><a href="#body" class="scrollto"><span>The</span> Brand</a></h1> 
+        <h1><a href="/" class="scrollto"><span>Kseniya</span> Studio</a></h1> 
       </div>
+      @php
+          $path = Request::path();
 
+      @endphp
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="/">Главная</a></li>
-          <li><a href="/services">Услуги</a></li>
-          <li><a href="/aboutme">Обо мне</a></li>
-          <li><a href="/gallery">Галерея</a></li>
+          <li class="{{$path === '/' ? 'menu-active' : ''}}"><a href="/">Главная</a></li>
+          <li class="{{$path === 'services' ? 'menu-active' : ''}}"><a href="/services">Услуги</a></li>
+          <li class="{{$path === 'aboutme' ? 'menu-active' : ''}}"><a href="/aboutme">Обо мне</a></li>
+          <li class="{{$path === 'gallery' ? 'menu-active' : ''}}"><a href="/gallery">Галерея</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
