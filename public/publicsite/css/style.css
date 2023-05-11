@@ -365,7 +365,7 @@ li.menu-active a, .nav-menu a.modalButton:hover, .nav-menu a:hover {
 }
 
 /* Nav Menu Styling */
-.nav-menu a, .nav-menu a.modalButton {
+.nav-menu a, .nav-menu a.modalButton, .filter-label {
   padding: 10px 16px;
   text-decoration: none;
   display: inline-block;
@@ -376,7 +376,7 @@ li.menu-active a, .nav-menu a.modalButton:hover, .nav-menu a:hover {
   outline: none;
 }
 
-.nav-menu li:hover > a, .nav-menu > .menu-active > a, .nav-menu a.modalButton:hover {
+.nav-menu li:hover > a, .nav-menu > .menu-active > a, .nav-menu a.modalButton:hover, .filter-label:hover {
   color: var(--gold);
 }
 

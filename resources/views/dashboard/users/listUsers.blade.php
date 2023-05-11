@@ -5,7 +5,7 @@
   <div class="card mb-4">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
       <h6 class="m-0 font-weight-bold text-primary">Пользователи</h6>
-      <a class="m-0 float-right btn btn-primary btn-sm" href="{{url('/adduser')}}">Добавить <i class="fas fa-plus-circle"></i></a>
+      <a class="m-0 float-right btn btn-outline-primary btn-sm" href="{{url('/adduser')}}">Добавить <i class="fas fa-plus-circle"></i></a>
     </div>
     <div class="table-responsive p-3">
       <table class="table align-items-center table-flush" id="dataTable">

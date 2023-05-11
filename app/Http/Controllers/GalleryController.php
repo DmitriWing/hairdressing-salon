@@ -15,23 +15,39 @@ class GalleryController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): Response
+    public function index(Request $request): Response
     {
-        $images = Gallery::orderBy('created_at', 'desc')->get();
+        // $images = Gallery::orderBy('created_at', 'desc')->get();
         $categories = Category::orderBy('title')->get();
-        return response()->view('dashboard.gallery.listImages', compact('images', 'categories'));
+        $selectedCategories = $request->input('category');
+        $query = Gallery::query();
+        if ($selectedCategories) {
+            $query->whereIn('category_id', $selectedCategories);
+        }else{
+            $query->orderBy('created_at', 'desc')->get();
+        }
+        $images = $query->get();
+        return response()->view('dashboard.gallery.listImages', compact('images', 'categories', 'selectedCategories'));
     }
 
     /**
-     * Display a listing of the resource on public site.
+     * Filtering images on he public site
      */
-    public function indexPublic(): Response
+    public function indexPublic(Request $request): Response
     {
-        $images = Gallery::where('publishing', true)
-        ->orderBy('created_at', 'desc')
-        ->get();
         $comments = Comment::orderBy('created_at', 'desc')->get();
-        return response()->view('publicsite.gallery', compact('images', 'comments'));
+        $categories = Category::orderBy('title')->get();
+        $selectedCategories = $request->input('category');
+        $query = Gallery::query();
+
+        if ($selectedCategories) {
+            $query->whereIn('category_id', $selectedCategories)->where('publishing', true);
+        }else{
+            $query->where('publishing', true)->orderBy('created_at', 'desc')->get();
+        }
+        $images = $query->get();
+
+        return response()->view('publicsite.gallery.gallery', compact('categories', 'images', 'comments', 'selectedCategories'));
     }
 
     /**
@@ -85,10 +101,10 @@ class GalleryController extends Controller
                 }
                 $gallery->save();
             }
-            // Redirect back to the form with a success message
+            // Redirect back to the form with a status message
             return redirect()->back()->with('status', 'Изображения добавлены в галерею');
         }else{
-            // Redirect back to the form with a success message
+            // Redirect back to the form with a error message
             return redirect()->back()->withErrors('Ошибка добавления фото');
         }
     }
@@ -102,22 +118,17 @@ class GalleryController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Gallery $gallery): Response
-    {
-        $categories = Category::orderBy('title')->get();
-        return response()->view('dashboard.gallery.editImages', compact('categories'));
-    }
-
-    /**
-     * Update the specified resource in storage.
+     * Update the image's category.
      */
     public function update(Request $request, Gallery $image): RedirectResponse
     {
-        $image->update([
-            'category_id' => $request->category,
-        ]);
+        // dd($request->all());
+        $categoryIds = $request->input('category_id');
+        foreach ($categoryIds as $galleryId => $categoryId) {
+            $gallery = Gallery::find($galleryId);
+            $gallery->category_id = $categoryId;
+            $gallery->save();
+        }
         return redirect()->back();
     }
 

@@ -26,7 +26,8 @@ use App\Http\Controllers\GalleryController;
 Route::get('/', [TestimonialController::class, 'testimonialList'])->name('home');
 Route::get('/services', [CategoryController::class, 'categoriesList']);
 Route::get('/aboutme', [Controller::class, 'aboutMe']);
-Route::get('/gallery', [GalleryController::class, 'indexPublic']);
+Route::get('/gallery', [GalleryController::class, 'indexPublic'])->name('publicsite.gallery');
+Route::post('/gallery', [GalleryController::class, 'indexPublic'])->name('filter.gallery');
 
 
 
@@ -43,7 +44,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/createtestimonial', [TestimonialController::class, 'create']);
     Route::post('/createtestimonial', [TestimonialController::class, 'store']);
 
-    // Route::get('/createcomment', [CommentController::class, 'create'])->name('createcomment');
     Route::post('/createcomment/{gallery_id}', [CommentController::class, 'store']);
     Route::post('/destroycomment/{comment_id}', [CommentController::class, 'destroy']);
 
@@ -97,14 +97,14 @@ Route::middleware('auth')->group(function () {
          * Routes to handle gallery
          */
         Route::get('/listimages', [GalleryController::class, 'index']);
+        Route::post('/listimages', [GalleryController::class, 'index'])->name('filter.gallery.dashboard');
 
         Route::get('/addimage', [GalleryController::class, 'create']);
         Route::post('/addimage', [GalleryController::class, 'store']);
 
         Route::post('/publishimage/{imageId}', [GalleryController::class, 'publishImage']);
 
-        Route::get('/editimage/{image}', [GalleryController::class, 'edit']);
-        Route::post('/editimage/{image}', [GalleryController::class, 'update']);
+        Route::post('/editimage/{image}', [GalleryController::class, 'update'])->name('editimage');
         Route::delete('/deleteimage/{image}', [GalleryController::class, 'destroy']);
 
     }); // ends Route::middleware(['admin', 'manager'])->group(function () {

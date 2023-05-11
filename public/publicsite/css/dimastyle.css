@@ -42,6 +42,23 @@ button.callComment{
   outline: none;
 }
 
+/*------- for filters buttons on gallery -------*/
+
+/* checkbox input */
+.filter-input{
+	display: none;
+}
+/* label */
+.filter .filter-label{
+  padding: 2px 6px;
+  margin: 0.25em auto;
+  cursor: pointer;
+}
+.filter-input:checked + .filter-label{
+	color: var(--gold);
+}
+/*--------------------------------*/
+
 /*---------- media queries -------- */
 @media (max-width: 767px) {
   .top-contact-bar{

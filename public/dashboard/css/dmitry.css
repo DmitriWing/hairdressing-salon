@@ -106,7 +106,44 @@ Gallery in dashboard
 }
 
 /*--------------------------------------*/
+
 /* for soft deleted users */
 .softDeleted{
 	background-color: #fafaff;
 }
+/*--------------------------------------*/
+
+/* for checkboxes in filter form in gallery (dashboard) */
+/* checkbox input */
+.filter-input{
+	display: none;
+}
+/* label */
+.filter .filter-label{
+	color: #6777ef;
+  padding: 2px 6px;
+  margin: 0.25em auto;
+  cursor: pointer;
+	border: #6777ef solid 1px;
+	border-radius: 0.2rem;
+	box-shadow: 0 .125rem .25rem 0 rgba(58,59,69,.2)!important;
+}
+.filter .filter-label:hover{
+	background-color: #6777ef;
+	color: #ffffff;
+	transition: color 0.3s ease-in-out,background-color 0.3s ease-in-out;
+}
+.filter-input:checked + .filter-label{
+	background-color: #6777ef;
+	color: #ffffff;
+}
+.filter-input:checked + .filter-label:hover{
+	background-color: #ffffff;
+	color: #6777ef;
+}
+a.filter-label{
+	font-weight: 600;
+	text-decoration: none;
+}
+/*--------------------------------*/
+
