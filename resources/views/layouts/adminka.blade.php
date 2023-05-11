@@ -7,11 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link href="img/logo/logo.png" rel="icon">
+  <link href="" rel="icon">
   <title>Hairdressing - Dashboard</title>
   <!-- Font Awesome -->
   <link href="{{asset('publicsite/fontawesome-free-6.2.1-web/css/all.css')}}" rel="stylesheet">
-  {{-- <link href="{{asset('dashboard/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css"> --}}
   <link href="{{asset('dashboard/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
   <link href="{{asset('dashboard/css/ruang-admin.min.css')}}" rel="stylesheet">
   {{-- Datatable --}}
@@ -31,7 +30,6 @@
         <div class="sidebar-brand-text mx-3">На сайт</div>
       </a>
       @cannot('isUser')
-          
         <hr class="sidebar-divider my-0">
         <li class="nav-item active">
           <a class="nav-link" href="adminka">
@@ -50,7 +48,6 @@
             </a>
           </li>
         @endcan
-
         <li class="nav-item">
           <a class="nav-link collapsed" href="/listCategories">
             <i class="fab fa-fw fa-wpforms"></i>
@@ -90,27 +87,21 @@
             <i class="fa fa-bars"></i>
           </button>
           <ul class="navbar-nav ml-auto">
-            
-
             {{-- <div class="topbar-divider d-none d-sm-block"></div> --}}
-
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="images/avatars/{{Auth::user()->avatar}}" style="max-width: 60px">
                 <span class="ml-2 d-none d-lg-inline text-white small">{{Auth::user()->name}}</span>
               </a>
-
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
               @cannot('isUser')
-                  
               <a class="dropdown-item" href="profile">
                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                 Профиль
               </a>
               <div class="dropdown-divider"></div>
               @endcannot
-
                 <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Выйти
@@ -123,13 +114,6 @@
 
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
-          {{-- <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="./">sDgsr</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-            </ol>
-          </div> --}}
 {{-- //--------------------------------------------------- --}}
           <div class="row mb-3 justify-content-center">
             @yield('content')
@@ -166,7 +150,7 @@
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
-              <b><a href="https://indrijunanda.gitlab.io/" target="_blank">indrijunanda</a></b>
+              <b><a >DK</a></b>
             </span>
           </div>
         </div>

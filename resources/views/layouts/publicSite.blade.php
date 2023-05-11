@@ -61,9 +61,9 @@
     <div class="row py-0.5 px-5 justify-content-between ">
       <div class="text-left text-black ">
           <div class="d-inline-flex align-items-center testClass">
-              <small class="text-dark"><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</small>
+              <small class="text-dark"><i class="fa fa-phone-alt mr-2"></i>+372 5817 2897</small>
               <small class="px-3 text-dark">|</small>
-              <small class="text-dark"><i class="fa fa-envelope mr-2"></i>info@example.com</small>
+              <small class="text-dark"><i class="fa fa-envelope mr-2"></i>ksenia.andrukovich@gmail.com</small>
           </div>
       </div>
       <div class="text-right text-black">
@@ -98,15 +98,11 @@
               <a class="text-dark " href="/profile">
                 <small><i class="fas fa-user"></i> {{ Auth::user()->name }}</small>
               </a>
-
-
             @endcanany
-
           @else
             <a class="text-dark " href="/login">
               <small><i class="fas fa-sign-in-alt"></i> Войти</small>
             </a>
-            
             <small class="px-2">|</small>
             <a class="text-dark " href="/register">
               <small><i class="fas fa-user-plus"></i> Регистрация</small>
@@ -124,7 +120,6 @@
 
       <div id="logo" class="pull-left">
         <h1><a href="#body" class="scrollto"><span>The</span> Brand</a></h1> 
-        <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
       </div>
 
       <nav id="nav-menu-container">
@@ -142,9 +137,6 @@
 
   <main id="main">
     @yield('content')
-    
-
-    
 
   </main>
 

@@ -41,7 +41,7 @@ class UserController extends Controller
         'email'=>'required|string|email|max:255|unique:users',
         'password' => 'required|string|min:6|confirmed',
         'password_confirmation' => 'required',
-        'phone'=>'required|numeric'
+        // 'phone'=>'required|numeric'
       ]);
       //------------ work with image file
       $data = $request->all();

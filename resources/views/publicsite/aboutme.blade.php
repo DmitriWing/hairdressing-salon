@@ -57,12 +57,12 @@
         <div class="contact-phone">
           <i class="ion-ios-telephone-outline"></i>
           <h3>Тел номер</h3>
-          <p><a href="tel:+155895548855">+1 2345 67890 12</a></p>
+          <p><a href="tel:+155895548855">+372 5817 2897</a></p>
         </div> 
         <div class="contact-email">
           <i class="ion-ios-email-outline"></i>
-          <h3>Мэйл</h3>
-          <p><a href="mailto:info@example.com">name@website.com</a></p>
+          <h3>Мейл</h3>
+          <p><a href="mailto:info@example.com">ksenia.andrukovich@gmail.com</a></p>
         </div> 
       </div>
       <!-- map -->

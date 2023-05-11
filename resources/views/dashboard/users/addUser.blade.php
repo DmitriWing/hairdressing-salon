@@ -10,6 +10,7 @@
   </a>
 </div>
 @include('common.errors')
+@include('common.status')
 <div class="card-body">
   <form action="{{url('/adduser')}}" method="POST" enctype="multipart/form-data">
     <!-- modal window -->

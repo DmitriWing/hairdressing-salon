@@ -27,9 +27,9 @@ class GalleryController extends Controller
      */
     public function indexPublic(): Response
     {
-        $images = Gallery::orderBy('created_at', 'desc')->get();
-        // $categories = Category::orderBy('title')->get();
-        
+        $images = Gallery::where('publishing', true)
+        ->orderBy('created_at', 'desc')
+        ->get();
         $comments = Comment::orderBy('created_at', 'desc')->get();
         return response()->view('publicsite.gallery', compact('images', 'comments'));
     }
@@ -68,29 +68,29 @@ class GalleryController extends Controller
             'image.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10000', // Adjust max file size as needed
         ]);
 
-        // Check if the "publishing" checkbox was checked
-        if ($request->has('publishing')) {
-            $publishing = true;
-        }
-
-        foreach ($request->file('image') as $file) {
-            // Generate a unique filename for each image
-            $filename = uniqid() . '.' . $file->getClientOriginalExtension();
-    
-            // Save the image to the "uploads" folder
-            $file->move(public_path('/images/gallery'), $filename);
-    
-            // Save the image data to the database
-            $gallery = new Gallery;
-            $gallery->category_id = $validatedData['category'];
-            $gallery->image = $filename;
-            if ($request->has('publishing')) {
-                $gallery->publishing = true;
+        if (null !== $request->file('image')) {
+            foreach ($request->file('image') as $file) {
+                // Generate a unique filename for each image
+                $filename = uniqid() . '.' . $file->getClientOriginalExtension();
+        
+                // Save the image to the "uploads" folder
+                $file->move(public_path('/images/gallery'), $filename);
+        
+                // Save the image data to the database
+                $gallery = new Gallery;
+                $gallery->category_id = $validatedData['category'];
+                $gallery->image = $filename;
+                if ($request->has('publishing')) {
+                    $gallery->publishing = true;
+                }
+                $gallery->save();
             }
-            $gallery->save();
+            // Redirect back to the form with a success message
+            return redirect()->back()->with('status', 'Изображения добавлены в галерею');
+        }else{
+            // Redirect back to the form with a success message
+            return redirect()->back()->withErrors('Ошибка добавления фото');
         }
-        // Redirect back to the form with a success message
-        return redirect()->back()->with('success', 'Изображения добавдены в галерею.');
     }
 
     /**

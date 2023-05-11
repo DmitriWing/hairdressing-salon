@@ -10,7 +10,7 @@
     </a>
   </div>
 
-  @if (session('success'))
+  {{-- @if (session('success'))
       <div class="alert alert-info alert-dismissible fade show">
         {{ session('success') }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -22,9 +22,10 @@
           <pre>{{ print_r(session('success')['deleted_category'], true) }}</pre>
         </div>
       @endif
-    @endif
+    @endif --}}
 
   @include('common.errors')
+  @include('common.status')
   <div class="card-body">
     <form action="{{url('/addimage')}}" method="POST" enctype="multipart/form-data">
       @csrf
